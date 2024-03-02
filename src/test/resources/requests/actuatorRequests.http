@@ -15,3 +15,8 @@ Authorization: {{auth}}
 GET http://localhost:8080/api/plants
 Accept: application/json
 Authorization: {{auth}}
+
+### Tweede HTTP Request naar /actuator/health
+GET http://localhost:8080/api/answers
+Accept: application/json
+Authorization: {{auth}}
