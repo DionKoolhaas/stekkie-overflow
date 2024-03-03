@@ -1,13 +1,13 @@
 package com.dion.stekkieoverflow.domain.crawler;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,8 +20,21 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String brand;
-    private String origin;
-    private String characteristics;
+    private String title;
 
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToOne
+    private Link link;
+
+    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(FetchMode.JOIN)
+    private List<DocumentLink> linksInDocument;
+
+    public List<DocumentLink> getLinksInDocument(){
+        if (this.linksInDocument == null) {
+            this.linksInDocument = new ArrayList<>();
+        }
+        return linksInDocument;
+    }
 }

@@ -43,10 +43,18 @@ CREATE TABLE link (
 
 CREATE TABLE document  (
      id INT PRIMARY KEY AUTO_INCREMENT,
-     brand VARCHAR(20),
-     origin VARCHAR(20),
+     title VARCHAR(255),
+     -- de locatie die behoort tot dit document
      link_id INT,
-     characteristics VARCHAR(30),
 
     CONSTRAINT fk_document_link FOREIGN KEY (link_id) REFERENCES  link(id)
+);
+
+-- links die in een document zijn gevonden
+CREATE TABLE document_link (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  link_id INT,
+  document_id INT,
+  CONSTRAINT fk_document_link_link FOREIGN KEY (link_id) REFERENCES  link(id),
+  CONSTRAINT fk_document_link_document FOREIGN KEY (document_id) REFERENCES  document(id)
 );
