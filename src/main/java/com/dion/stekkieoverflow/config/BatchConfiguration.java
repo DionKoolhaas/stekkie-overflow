@@ -19,9 +19,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class BatchConfiguration {
 
-    @Value("${file.input}")
-    private String fileInput;
-
     private final EntityManagerFactory entityManagerFactory;
 
 
