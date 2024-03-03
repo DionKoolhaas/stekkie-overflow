@@ -1,4 +1,8 @@
-
+file:
+  input: document-list.csv
+scraper:
+  rootUrl: https://en.wikipedia.org/wiki/Open-source_intelligence
+  depth: 1
 spring:
   flyway:
     enabled: true
