@@ -3,6 +3,9 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+  data:
+    rest:
+      base-path: /data-rest-api
 jpa:
   hibernate:
     ddl-auto: none
