@@ -12,4 +12,6 @@ TODO:
  - maak mogelijk dat document vaker wordt opgehaald in de tijd en houd de geschiedenis bij
  - throttling
  - sla meer elementen op
-
+ - correcte foutafhandeling
+ - cssQueries in aparte tabel en die meenmen bij het verwerken van het document
+ - cssQueries toevoegen obv schema.org

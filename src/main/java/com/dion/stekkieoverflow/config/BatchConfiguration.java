@@ -42,10 +42,9 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public Job crawlInternetJob(JobRepository jobRepository, JobCompletionNotificationListener listener, Step step1) {
+    public Job crawlInternetJob(JobRepository jobRepository, Step step1) {
         return new JobBuilder("crawlInternetJob", jobRepository)
                 .incrementer(new RunIdIncrementer())
-                .listener(listener)
                 .flow(step1)
                 .end()
                 .build();

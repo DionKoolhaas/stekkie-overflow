@@ -50,6 +50,20 @@ CREATE TABLE document  (
     CONSTRAINT fk_document_link FOREIGN KEY (link_id) REFERENCES  link(id)
 );
 
+CREATE TABLE text (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    text VARCHAR(255) NOT NULL,
+    css_query VARCHAR(52) NOT NULL
+);
+
+CREATE TABLE document_text (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    text_id INT,
+    document_id INT,
+    CONSTRAINT fk_document_phrase_phrase FOREIGN KEY (text_id) REFERENCES  text(id),
+    CONSTRAINT fk_document_phrase_document FOREIGN KEY (document_id) REFERENCES  document(id)
+);
+
 -- links die in een document zijn gevonden
 CREATE TABLE document_link (
   id INT PRIMARY KEY AUTO_INCREMENT,
