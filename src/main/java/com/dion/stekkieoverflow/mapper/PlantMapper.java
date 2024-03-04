@@ -1,4 +1,4 @@
-package com.dion.stekkieoverflow.mappers;
+package com.dion.stekkieoverflow.mapper;
 
 import com.dion.stekkieoverflow.domain.Plant;
 import com.dion.stekkieoverflow.dto.PlantDTO;

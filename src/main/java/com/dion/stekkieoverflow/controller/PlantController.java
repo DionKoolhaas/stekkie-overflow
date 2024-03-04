@@ -1,27 +1,32 @@
 package com.dion.stekkieoverflow.controller;
 
 import com.dion.stekkieoverflow.dto.PlantDTO;
-import com.dion.stekkieoverflow.mappers.PlantMapper;
-import com.dion.stekkieoverflow.repository.PlantRepository;
+import com.dion.stekkieoverflow.service.PlantService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * REST controller for the Plants resource
+ */
 @RestController
 @RequestMapping("/api/plants")
 public class PlantController {
-    private PlantRepository plantRepository;
+    private final PlantService plantService;
 
-    public PlantController(PlantRepository plantRepository) {
-        this.plantRepository = plantRepository;
+    public PlantController(PlantService plantService) {
+        this.plantService = plantService;
     }
 
-
+    /**
+     * Get all plants, no pagination yet.
+     * @return
+     */
     @GetMapping
     public List<PlantDTO> getAllPlants() {
-        return PlantMapper.INSTANCE.plantToPlantDtos(plantRepository.findAll());
+        return plantService.getAllPlants();
     }
 
 }

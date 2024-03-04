@@ -1,22 +1,32 @@
-# Base64 encoded string van: testuser:testpassword
+# Base64 encoded string of: testuser:testpassword
 @auth = Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 
-### Eerste HTTP Request naar /actuator
+### HTTP Request to /actuator
 GET http://localhost:8080/actuator
 Accept: application/json
 Authorization: {{auth}}
 
-### Tweede HTTP Request naar /actuator/health
+### HTTP Request to /actuator/health
 GET http://localhost:8080/actuator/health
 Accept: application/json
 Authorization: {{auth}}
 
-### Tweede HTTP Request naar /actuator/health
+### HTTP Request to /api/plants
 GET http://localhost:8080/api/plants
 Accept: application/json
 Authorization: {{auth}}
 
-### Tweede HTTP Request naar /actuator/health
+### HTTP Request to /api/answers
 GET http://localhost:8080/api/answers
+Accept: application/json
+Authorization: {{auth}}
+
+### HTTP Request to find easy questions
+GET http://localhost:8080/api/questions/search/find-a-question-to-answer?difficulty=EASY
+Accept: application/json
+Authorization: {{auth}}
+
+### HTTP Request to find hard questions
+GET http://localhost:8080/api/questions/search/find-a-question-to-answer?difficulty=HARD
 Accept: application/json
 Authorization: {{auth}}

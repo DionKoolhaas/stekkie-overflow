@@ -1,4 +1,4 @@
-package com.dion.stekkieoverflow.mappers;
+package com.dion.stekkieoverflow.mapper;
 
 import com.dion.stekkieoverflow.domain.Question;
 import com.dion.stekkieoverflow.dto.QuestionDTO;
@@ -13,5 +13,5 @@ public interface QuestionMapper {
     QuestionMapper INSTANCE = Mappers.getMapper( QuestionMapper.class);
     QuestionDTO questionToQuestionDTO(Question question);
 
-    List<QuestionDTO> plantToPlantDtos(List<Question> answers);
+    List<QuestionDTO> questionToQuestionDtos(List<Question> answers);
 }
