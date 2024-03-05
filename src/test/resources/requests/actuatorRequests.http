@@ -30,3 +30,9 @@ Authorization: {{auth}}
 GET http://localhost:8080/api/questions/search/find-a-question-to-answer?difficulty=HARD
 Accept: application/json
 Authorization: {{auth}}
+
+###
+
+POST http://localhost:8080/api/batch/startjob
+Accept: application/json
+Authorization: {{auth}}

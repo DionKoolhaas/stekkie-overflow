@@ -20,7 +20,7 @@ public class SecurityConfiguration {
     /**
      *
      * TODO: create a filter chain that meets al criteria. i.e. csrf is enabled and the correct requests are
-     *
+     * authenticated
      * @param http
      * @return
      * @throws Exception

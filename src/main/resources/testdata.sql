@@ -8,4 +8,6 @@ INSERT INTO QUESTION(title, question_text, plant_id, user_id) VALUES ('Wat te do
 
 INSERT INTO ANSWER(answer_text, question_id, user_id) VALUES ('Ik heb een mengsel van water, afwasmiddel en spiritus gebruikt. Werkt perfect!', 1, 'testgebruiker2' );
 
-INSERT INTO LINK( URL) VALUES ( 'src/test/resources/html/open-source-intellijence.html');
+INSERT INTO LINK( URL) VALUES ( 'src/test/resources/html/wikipedia/open-source-intellijence.html');
+
+-- INSERT INTO LINK( URL) VALUES ( 'https://en.wikipedia.org/wiki/Open-source_intelligence');

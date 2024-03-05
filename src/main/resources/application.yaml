@@ -1,5 +1,6 @@
-scraper:
-  rootUrl: https://en.wikipedia.org/wiki/Open-source_intelligence
+crawlInternetJob:
+  maxItemCount: 10
+  chunkSize: 1
 spring:
   flyway:
     enabled: true
