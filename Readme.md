@@ -16,10 +16,8 @@
 
 ## TODO
  - respecteer de robots txt & en andere filters voor het niet parsen van een document
- - documenten van internet halen ipv filesystem
  - maak mogelijk dat document vaker wordt opgehaald in de tijd en houd de geschiedenis bij
  - throttling
- - user mogelijkheid geven een volgende run te draaien
  - correcte foutafhandeling & logging
  - testen, testen & testen
  - cssQueries in aparte tabel en die meenmen bij het verwerken van het document
