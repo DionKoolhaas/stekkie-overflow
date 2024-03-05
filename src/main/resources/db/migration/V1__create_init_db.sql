@@ -36,12 +36,12 @@ CREATE TABLE ANSWER(
     CONSTRAINT fk_answer_question FOREIGN KEY(question_id) REFERENCES QUESTION(id)
 );
 
-CREATE TABLE link (
+CREATE TABLE LINK (
     id INT PRIMARY KEY AUTO_INCREMENT,
     url VARCHAR(2555)
 );
 
-CREATE TABLE document  (
+CREATE TABLE DOCUMENT  (
      id INT PRIMARY KEY AUTO_INCREMENT,
      title VARCHAR(255),
      -- de locatie die behoort tot dit document
@@ -50,13 +50,13 @@ CREATE TABLE document  (
     CONSTRAINT fk_document_link FOREIGN KEY (link_id) REFERENCES  link(id)
 );
 
-CREATE TABLE text (
+CREATE TABLE TEXT (
     id INT PRIMARY KEY AUTO_INCREMENT,
     text VARCHAR(255) NOT NULL,
     css_query VARCHAR(52) NOT NULL
 );
 
-CREATE TABLE document_text (
+CREATE TABLE DOCUMENT_TEXT (
     id INT PRIMARY KEY AUTO_INCREMENT,
     text_id INT,
     document_id INT,
@@ -65,7 +65,7 @@ CREATE TABLE document_text (
 );
 
 -- links die in een document zijn gevonden
-CREATE TABLE document_link (
+CREATE TABLE DOCUMENT_LINK (
   id INT PRIMARY KEY AUTO_INCREMENT,
   link_id INT,
   document_id INT,

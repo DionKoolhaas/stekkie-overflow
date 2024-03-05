@@ -23,7 +23,7 @@ public class ProcesDocumentHelper {
     }
 
     /**
-     *
+     * Method to select al the elements in a JSoup doc, given a cssquery.
      * @param doc, the subject (a Jsoup document) for querying
      * @param cssQuery
      * @param map, mapping function for the select result
